@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: uptime
+  namespace: argocd
+spec:
+  sources:
+  - repoURL: https://helm.irsigler.cloud
+    chart: uptime-kuma
+    targetRevision: 2.14.2
+    helm:
+      valueFiles:
+        - $values/02_UPTIME/values.yaml
+  - repoURL: 'https://github.com/Cloud-Computing-2324/deployment-exercises-Tiebevn.git'
+    targetRevision: main
+    ref: values
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: uptime
+  project: default
+  info:
+    - name: 'Uptime Kuma'
+      value: 'https://up.66.co.ucll.cloud'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
