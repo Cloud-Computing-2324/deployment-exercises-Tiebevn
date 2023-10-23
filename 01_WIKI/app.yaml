@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: uptime
+  name: wiki
   namespace: argocd
 spec:
   sources:
-  - repoURL: https://helm.irsigler.cloud
-    chart: uptime-kuma
-    targetRevision: 2.14.2
+  - repoURL: https://charts.js.wiki
+    chart: wiki
+    targetRevision: x
     helm:
       valueFiles:
-        - $values/02_UPTIME/values.yaml
+        - $values/01_WIKI/values.yaml
   - repoURL: 'https://github.com/Cloud-Computing-2324/deployment-exercises-Tiebevn.git'
     targetRevision: main
     ref: values

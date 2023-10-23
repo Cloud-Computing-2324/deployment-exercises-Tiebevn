@@ -1,0 +1,8 @@
+ingres:
+  enabled: true
+  hosts:
+    host:
+      - wiki.66.co.ucll.cloud
+    paths:
+      - path: /
+        pathType: Prefix
