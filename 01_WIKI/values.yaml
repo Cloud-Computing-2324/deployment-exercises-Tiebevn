@@ -1,8 +1,8 @@
 ingres:
   enabled: true
   hosts:
-    host:
+    - host:
       - wiki.66.co.ucll.cloud
-    paths:
-      - path: /
-        pathType: Prefix
+      paths:
+        - path: "/"
+          pathType: Prefix
