@@ -1,4 +1,4 @@
-ingres:
+ingress:
   enabled: true
   hosts:
     - host:
